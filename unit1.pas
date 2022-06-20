@@ -15,6 +15,7 @@ type
     Button1: TButton;
     Edit1: TEdit;
     procedure Button1Click(Sender: TObject);
+    procedure Edit1Change(Sender: TObject);
   private
 
   public
@@ -32,7 +33,7 @@ implementation
 
 function factorial(n:integer):integer;
 begin
-  if n<2 then Result:=n else Result:=n*factorial
+  if n<2 then Result:=1 else Result:=n*factorial(n-1)
 
 end;
 
@@ -41,6 +42,11 @@ var n:integer;
 begin
   n:=StrToInt(Edit1.text);
   Edit1.Text:=IntToStr(factorial(n));
+
+end;
+
+procedure TForm1.Edit1Change(Sender: TObject);
+begin
 
 end;
 
