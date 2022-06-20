@@ -32,7 +32,7 @@ implementation
 
 function factorial(n:integer):integer;
 begin
-  if n<2 then Result:=n else Result:=n*factorial
+  if n<2 then Result:=1 else Result:=n*factorial(n-1)
 
 end;
 
